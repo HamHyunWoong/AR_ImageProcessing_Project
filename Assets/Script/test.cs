@@ -41,7 +41,7 @@ public class test : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Debug.Log("test");
+        Debug.Log("dsadffasdf");
 
         // create a list of webcam devices that is available
         WebCamDevice[] devices = WebCamTexture.devices;
@@ -150,11 +150,10 @@ public class test : MonoBehaviour {
     }
 
     IEnumerator mat_To_Texture(Mat mat) {
-
+        Mat mat01 = new Mat();
+        
         //mat을 openCV의 함수를 이용하여 정보추출 혹은 변환
         //외곽선 추출
-
-        Mat mat01 = new Mat();
         Cv2.Canny(mat, mat01, 50, 200);          
 
         //
