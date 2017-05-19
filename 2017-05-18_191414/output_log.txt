@@ -1,0 +1,328 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   Intel
+    VRAM:     4197 MB
+    Driver:   2.0.105.0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\OpenCvSharp.dll (this message is harmless)
+Loading C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\OpenCvSharp.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\GitHubProject\AR_ImageProcessing_Project\실행프로그램_필터링_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.454518 ms
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1eb4 -> priority: 1 
+Frame count: 30, Texture count: 1, Display count: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Crash!!!
+SymInit: Symbol-SearchPath: '.;C:\GitHubProject\AR_ImageProcessing_Project;C:\GitHubProject\AR_ImageProcessing_Project;C:\WINDOWS;C:\WINDOWS\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'DELL'
+OS-Version: 10.0.14393 () 0x100-0x1
+C:\GitHubProject\AR_ImageProcessing_Project\�������α׷�_���͸�.exe:�������α׷�_���͸�.exe (00007FF7946B0000), size: 23150592 (result: 0), SymType: '-exported-', PDB: 'C:\GitHubProject\AR_ImageProcessing_Project\�������α׷�_�', fileVersion: 5.5.0.46319
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFC35E40000), size: 1904640 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntdll.dll', fileVersion: 10.0.14393.479
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFC33700000), size: 704512 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNEL32.DLL', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFC33110000), size: 2215936 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNELBASE.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFC358E0000), size: 1462272 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\USER32.dll', fileVersion: 10.0.14393.576
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFC32380000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\win32u.dll', fileVersion: 10.0.14393.51
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFC35E00000), size: 212992 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\GDI32.dll', fileVersion: 10.0.14393.206
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFC326F0000), size: 1581056 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\gdi32full.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFC354B0000), size: 1277952 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ole32.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFC33430000), size: 2916352 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\combase.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFC33010000), size: 1003520 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ucrtbase.dll', fileVersion: 10.0.14393.0
+Frame count: 60, Texture count: 14, Display count: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFC35750000), size: 1183744 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\RPCRT4.dll', fileVersion: 10.0.14393.82
+C:\WINDOWS\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (00007FFC32680000), size: 434176 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\bcryptPrimitives.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFC34EC0000), size: 364544 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\sechost.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFC35880000), size: 335872 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SHLWAPI.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFC35D40000), size: 647168 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\msvcrt.dll', fileVersion: 7.0.14393.0
+C:\WINDOWS\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFC35C90000), size: 663552 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ADVAPI32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFC33810000), size: 22052864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SHELL32.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\cfgmgr32.dll:cfgmgr32.dll (00007FFC32330000), size: 270336 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\cfgmgr32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\windows.storage.dll:windows.storage.dll (00007FFC32880000), size: 7184384 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\windows.storage.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\powrprof.dll:powrprof.dll (00007FFC322B0000), size: 311296 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\powrprof.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\kernel.appcore.dll:kernel.appcore.dll (00007FFC32320000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\kernel.appcore.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\System32\shcore.dll:shcore.dll (00007FFC325D0000), size: 692224 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\shcore.dll', fileVersion: 10.0.14393.953
+C:\WINDOWS\System32\profapi.dll:profapi.dll (00007FFC32300000), size: 81920 (result: 0), SymType: '-nosymbols-', PDB: 'C:\WINDOWS\System32\profapi.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFC35B20000), size: 434176 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\WS2_32.dll', fileVersion: 10.0.14393.206
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFC35690000), size: 782336 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\OLEAUT32.dll', fileVersion: 10.0.14393.1198
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFC33330000), size: 638976 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\msvcp_win.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\IMM32.dll:IMM32.dll (00007FFC337C0000), size: 188416 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\IMM32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFC31180000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\HID.DLL', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFC25E50000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VERSION.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFC1EA20000), size: 1191936 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OPENGL32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFC30640000), size: 143360 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMM.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFC31930000), size: 659456 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DNSAPI.dll', fileVersion: 10.0.14393.953
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFC318F0000), size: 229376 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL', fileVersion: 10.0.14393.953
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFC337F0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\NSI.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFC2EFD0000), size: 839680 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINHTTP.dll', fileVersion: 10.0.14393.953
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FFC23560000), size: 184320 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\GLU32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\DDRAW.dll:DDRAW.dll (00007FFC1C160000), size: 1011712 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DDRAW.dll', fileVersion: 10.0.14393.953
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\WINMMBASE.dll:WINMMBASE.dll (00007FFC303A0000), size: 176128 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMMBASE.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\DCIMAN32.dll:DCIMAN32.dll (00007FFC24360000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DCIMAN32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFC30A20000), size: 610304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\uxtheme.dll', fileVersion: 10.0.14393.0
+C:\GitHubProject\AR_ImageProcessing_Project\�������α׷�_���͸�_Data\Mono\mono.dll:mono.dll (00007FFBF83C0000), size: 2998272 (result: 0), SymType: '-exported-', PDB: 'C:\GitHubProject\AR_ImageProcessing_Project\�������α׷�_���͸�_Data\Mono', fileVersion: 1.0.0.1
+C:\WINDOWS\System32\PSAPI.DLL:PSAPI.DLL (00007FFC33800000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\PSAPI.DLL', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\MSWSOCK.dll:MSWSOCK.dll (00007FFC31B70000), size: 376832 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSWSOCK.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\MSCTF.dll:MSCTF.dll (00007FFC34F20000), size: 1417216 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\MSCTF.dll', fileVersion: 10.0.14393.953
+C:\WINDOWS\system32\dwmapi.dll:dwmapi.dll (00007FFC300F0000), size: 155648 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\dwmapi.dll', fileVersion: 10.0.14393.206
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFC2F0B0000), size: 2842624 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\d3d11.dll', fileVersion: 10.0.14393.953
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFC31220000), size: 651264 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dxgi.dll', fileVersion: 10.0.14393.953
+C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igd10iumd64.dll:igd10iumd64.dll (00007FFC2B710000), size: 24399872 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igd10iumd64.dll', fileVersion: 21.20.16.4590
+C:\WINDOWS\SYSTEM32\bcrypt.dll:bcrypt.dll (00007FFC321E0000), size: 176128 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\bcrypt.dll', fileVersion: 10.0.14393.576
+C:\WINDOWS\SYSTEM32\ncrypt.dll:ncrypt.dll (00007FFC31DF0000), size: 155648 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ncrypt.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\NTASN1.dll:NTASN1.dll (00007FFC31DB0000), size: 241664 (result: 0), SymType: '-nosymbols-', PDB: 'C:\WINDOWS\SYSTEM32\NTASN1.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igc64.dll:igc64.dll (00007FFC2A220000), size: 18214912 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igc64.dll', fileVersion: 21.20.16.4590
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFC355F0000), size: 651264 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\clbcatq.dll', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFC1DD00000), size: 65536 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wbem\wbemprox.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFC21070000), size: 520192 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wbemcomn.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFC1E8A0000), size: 81920 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wbem\wbemsvc.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\system32\wbem\fastprox.dll:fastprox.dll (00007FFC1D760000), size: 999424 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wbem\fastprox.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\MMDevApi.dll:MMDevApi.dll (00007FFC29860000), size: 462848 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\MMDevApi.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\System32\DEVOBJ.dll:DEVOBJ.dll (00007FFC30ED0000), size: 163840 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DEVOBJ.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\System32\PROPSYS.dll:PROPSYS.dll (00007FFC2FD50000), size: 1593344 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\PROPSYS.dll', fileVersion: 7.0.14393.0
+C:\WINDOWS\SYSTEM32\wdmaud.drv:wdmaud.drv (00007FFC0B500000), size: 258048 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wdmaud.drv', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\ksuser.dll:ksuser.dll (00007FFC2FA70000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ksuser.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\AVRT.dll:AVRT.dll (00007FFC2EB80000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AVRT.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (00007FFC264C0000), size: 606208 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AUDIOSES.DLL', fileVersion: 10.0.14393.953
+C:\WINDOWS\SYSTEM32\wintypes.dll:wintypes.dll (00007FFC2F410000), size: 1269760 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wintypes.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\SYSTEM32\msacm32.drv:msacm32.drv (00007FFC2FC50000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msacm32.drv', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\MSACM32.dll:MSACM32.dll (00007FFC2FAB0000), size: 114688 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSACM32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\midimap.dll:midimap.dll (00007FFC2F9F0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\midimap.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.953_none_42151e83c686086b\comctl32.dll:comctl32.dll (00007FFC26920000), size: 2596864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.953_none_42151e83c686086b\comctl32.dll', fileVersion: 6.10.14393.953
+C:\Windows\System32\IME\IMEKR\imkrtip.dll:imkrtip.dll (00007FFBFFDB0000), size: 860160 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\IME\IMEKR\imkrtip.dll', fileVersion: 10.0.14393.447
+C:\Windows\System32\IME\shared\imetip.dll:imetip.dll (00007FFBFFC50000), size: 1400832 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\IME\shared\imetip.dll', fileVersion: 10.0.14393.953
+C:\WINDOWS\SYSTEM32\OLEACC.dll:OLEACC.dll (00007FFC24FD0000), size: 413696 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OLEACC.dll', fileVersion: 7.2.14393.1198
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\DUI70.dll:DUI70.dll (00007FFC12450000), size: 1736704 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DUI70.dll', fileVersion: 10.0.14393.953
+C:\Windows\System32\IME\IMEKR\imkrapi.dll:imkrapi.dll (00007FFC03220000), size: 229376 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\IME\IMEKR\imkrapi.dll', fileVersion: 10.0.14393.447
+C:\Windows\System32\IME\shared\imjkapi.dll:imjkapi.dll (00007FFC031E0000), size: 217088 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\IME\shared\imjkapi.dll', fileVersion: 10.0.14393.447
+C:\WINDOWS\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFC31640000), size: 204800 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntmarta.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\xinput1_3.dll:xinput1_3.dll (0000000000400000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\xinput1_3.dll', fileVersion: 9.18.944.0
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFC35080000), size: 4362240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SETUPAPI.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFC31D10000), size: 94208 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CRYPTSP.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFC31770000), size: 208896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\rsaenh.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\CRYPTBASE.dll:CRYPTBASE.dll (00007FFC31D30000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CRYPTBASE.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFC2D6C0000), size: 90112 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFC2D930000), size: 106496 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL', fileVersion: 10.0.14393.0
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFC22530000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\rasadhlp.dll', fileVersion: 10.0.14393.0
+C:\Windows\System32\devenum.dll:devenum.dll (00007FFC233A0000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\devenum.dll', fileVersion: 10.0.14393.206
+C:\WINDOWS\System32\WINTRUST.dll:WINTRUST.dll (00007FFC32570000), size: 348160 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\WINTRUST.dll', fileVersion: 10.0.14393.953
+C:\WINDOWS\System32\MSASN1.dll:MSASN1.dll (00007FFC322A0000), size: 65536 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\MSASN1.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFC323A0000), size: 1871872 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\CRYPT32.dll', fileVersion: 10.0.14393.1198
+C:\WINDOWS\SYSTEM32\msdmo.dll:msdmo.dll (00007FFC29A60000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msdmo.dll', fileVersion: 10.0.14393.0
+C:\Windows\System32\qcap.dll:qcap.dll (00007FFC0A840000), size: 208896 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\qcap.dll', fileVersion: 10.0.14393.0
+C:\Windows\System32\quartz.dll:quartz.dll (00007FFBFC800000), size: 1847296 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\quartz.dll', fileVersion: 10.0.14393.1066
+C:\Windows\System32\mfksproxy.dll:mfksproxy.dll (00007FFC047D0000), size: 294912 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\mfksproxy.dll', fileVersion: 10.0.14393.351
+C:\Windows\System32\ATL.DLL:ATL.DLL (00007FFC2EB90000), size: 114688 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ATL.DLL', fileVersion: 3.5.2284.0
+C:\Windows\System32\MFSENSORGROUP.dll:MFSENSORGROUP.dll (00007FFC21DC0000), size: 319488 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MFSENSORGROUP.dll', fileVersion: 10.0.14393.447
+C:\Windows\System32\MFPlat.DLL:MFPlat.DLL (00007FFC2EC70000), size: 1474560 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MFPlat.DLL', fileVersion: 10.0.14393.953
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\Windows\System32\RTWorkQ.DLL:RTWorkQ.DLL (00007FFC2EC40000), size: 188416 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\RTWorkQ.DLL', fileVersion: 10.0.14393.479
+C:\Windows\System32\ksproxy.ax:ksproxy.ax (00007FFC03900000), size: 307200 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ksproxy.ax', fileVersion: 10.0.14393.0
+C:\Windows\System32\d3d9.dll:d3d9.dll (00007FFC1FB60000), size: 1626112 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\d3d9.dll', fileVersion: 10.0.14393.447
+C:\WINDOWS\SYSTEM32\policymanager.dll:policymanager.dll (00007FFC25980000), size: 274432 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\policymanager.dll', fileVersion: 10.0.14393.953
+C:\Windows\System32\msvcp110_win.dll:msvcp110_win.dll (00007FFC30D40000), size: 593920 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\msvcp110_win.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\Windows\System32\vidcap.ax:vidcap.ax (00007FFC2F9E0000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\vidcap.ax', fileVersion: 10.0.14393.0
+C:\Windows\System32\kswdmcap.ax:kswdmcap.ax (00007FFC0A030000), size: 151552 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\kswdmcap.ax', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\Windows\System32\MFC42.dll:MFC42.dll (00007FFC02CB0000), size: 1454080 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MFC42.dll', fileVersion: 6.6.8063.0
+C:\Windows\System32\ODBC32.dll:ODBC32.dll (00007FFBFB120000), size: 716800 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ODBC32.dll', fileVersion: 10.0.14393.0
+C:\Windows\System32\DPAPI.dll:DPAPI.dll (00007FFC317B0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DPAPI.dll', fileVersion: 10.0.14393.0
+Frame count: 90, Texture count: 29, Display count: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\Windows\System32\qedit.dll:qedit.dll (00007FFBFB070000), size: 667648 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\qedit.dll', fileVersion: 10.0.14393.1066
+C:\WINDOWS\System32\COMDLG32.dll:COMDLG32.dll (00007FFC35B90000), size: 1024000 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\COMDLG32.dll', fileVersion: 10.0.14393.479
+C:\Windows\System32\MSVFW32.dll:MSVFW32.dll (00007FFC047A0000), size: 167936 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MSVFW32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.14393.953_none_7300116921188239\gdiplus.dll:gdiplus.dll (00007FFC26780000), size: 1679360 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.14393.953_none_7300116921188239\gdiplus.dll', fileVersion: 10.0.14393.953
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\msyuv.dll:msyuv.dll (00007FFC2E120000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msyuv.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\GitHubProject\AR_ImageProcessing_Project\�������α׷�_���͸�_Data\Plugins\OpenCvSharpExtern.dll:OpenCvSharpExtern.dll (0000000180000000), size: 32608256 (result: 0), SymType: '-exported-', PDB: 'C:\GitHubProject\AR_ImageProcessing_Project\�������α׷�_���͸�_Data\Plugins\OpenCvSharpE'
+C:\WINDOWS\SYSTEM32\AVIFIL32.dll:AVIFIL32.dll (00007FFC228B0000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AVIFIL32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\AVICAP32.dll:AVICAP32.dll (00007FFC21DA0000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AVICAP32.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\OpenCL.dll:OpenCL.dll (00007FFC21B80000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OpenCL.dll', fileVersion: 2.1.0.0
+C:\WINDOWS\SYSTEM32\amdocl64.dll:amdocl64.dll (00007FFBE1630000), size: 48889856 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\amdocl64.dll', fileVersion: 10.0.2117.9
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFC27570000), size: 1646592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dbghelp.dll', fileVersion: 10.0.14321.1024
+C:\WINDOWS\SYSTEM32\atiadlxx.DLL:atiadlxx.DLL (00007FFC1ABF0000), size: 1376256 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\atiadlxx.DLL', fileVersion: 7.16.30.1304
+C:\WINDOWS\SYSTEM32\WTSAPI32.dll:WTSAPI32.dll (00007FFC2FC90000), size: 77824 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WTSAPI32.dll', fileVersion: 10.0.14393.0
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\SYSTEM32\USERENV.dll:USERENV.dll (00007FFC319F0000), size: 126976 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\USERENV.dll', fileVersion: 10.0.14393.0
+C:\WINDOWS\SYSTEM32\amdocl12cl64.dll:amdocl12cl64.dll (00007FFBE8D50000), size: 27959296 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\amdocl12cl64.dll', fileVersion: 0.8.0.0
+C:\WINDOWS\SYSTEM32\atig6txx.dll:atig6txx.dll (00007FFC04050000), size: 208896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\atig6txx.dll', fileVersion: 8.14.1.6521
+C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\IntelOpenCL64.dll:IntelOpenCL64.dll (00007FFC03890000), size: 438272 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\IntelOpenCL64.dll', fileVersion: 21.20.16.4590
+C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x64\intelocl64.dll:intelocl64.dll (00007FFBF81E0000), size: 1929216 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x64\intelocl64.dll', fileVersion: 6.8.0.2
+C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x64\task_executor64.dll:task_executor64.dll (00007FFC03790000), size: 647168 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x64\task_executor64.dll', fileVersion: 6.8.0.2
+C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x64\cpu_device64.dll:cpu_device64.dll (00007FFBF8100000), size: 884736 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x64\cpu_device64.dll', fileVersion: 6.8.0.2
+생성성공, 영상에서 정보 추출 변환 시도중...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igdrcl64.dll:igdrcl64.dll (00007FFBF7A20000), size: 7147520 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igdrcl64.dll', fileVersion: 21.20.16.4590
+C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igdfcl64.dll:igdfcl64.dll (00007FFC01880000), size: 290816 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igdfcl64.dll', fileVersion: 21.20.16.4590
+C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igdmcl64.dll:igdmcl64.dll (00007FFBF1520000), size: 6930432 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\k120836.inf_amd64_ccaf7e7e1e972b78\igdmcl64.dll', fileVersion: 21.20.16.4590
+C:\WINDOWS\SYSTEM32\SspiCli.dll:SspiCli.dll (00007FFC31F10000), size: 180224 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SspiCli.dll', fileVersion: 10.0.14393.576
+
+========== OUTPUTING STACK TRACE ==================
+
+0x0000000180F63580 (OpenCvSharpExtern) xfeatures2d_SURF_setExtended
+0x0000000180F631CE (OpenCvSharpExtern) xfeatures2d_SURF_setExtended
+0x0000000180DAA29F (OpenCvSharpExtern) core_inRange_Scalar
+0x0000000005AF45EE (Mono JIT Code) (wrapper managed-to-native) OpenCvSharp.NativeMethods:core_inRange (intptr,OpenCvSharp.Scalar,OpenCvSharp.Scalar,intptr)
+0x0000000005AF3D68 (Mono JIT Code) OpenCvSharp.Cv2:InRange (OpenCvSharp.InputArray,OpenCvSharp.Scalar,OpenCvSharp.Scalar,OpenCvSharp.OutputArray)
+0x0000000005ADB1D1 (Mono JIT Code) TrackHand:ThreadRun ()
+0x0000000005AAF35B (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFBF84E54A3 (mono) mono_set_defaults
+0x00007FFBF84383F1 (mono) mono_runtime_invoke
+0x00007FFBF846352B (mono) mono_thread_interruption_request_flag
+0x00007FFBF85183DD (mono) unity_mono_reflection_method_get_method
+0x00007FFC33708364 (KERNEL32) BaseThreadInitThunk
+0x00007FFC35EA70D1 (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+**** Crash! ****
