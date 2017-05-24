@@ -36,7 +36,7 @@ public class TrackHand : MonoBehaviour {
     private Mat openMat;
     private Mat binMat;
     private Mat filterMat;
-    private Mat dilMat;
+    private Mat closeMat;
     private Mat xyMat;
     private Mat labelMat;
     private Mat statMat;
@@ -79,7 +79,7 @@ public class TrackHand : MonoBehaviour {
             skinMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             YCrCb = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             openMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-            dilMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+            closeMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             filterMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             binMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             labelMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
@@ -131,11 +131,8 @@ public class TrackHand : MonoBehaviour {
                     //뿌려주기(비동기 가상 스레드) 
                     StartCoroutine(mat_To_Texture(filterMat));
 
-                    //xy좌표 
-                    Debug.Log("X = "+statRect2.X+"   Y = "+statRect2.Y);
-                     
-
-                    HandPointer_01.GetComponent<RectTransform>().position = new Vector3(320-(statRect2.X+(statRect2.Width/2)), (statRect2.Y + (statRect2.Height / 2)), 0);
+                    //좌표를 화면에 보여줌. 
+                    HandPointer_01.GetComponent<RectTransform>().position = new Vector3(320-(statRect.X+(statRect.Width/2)), (statRect.Y + (statRect.Height*4)/5), -5);
                     
                 }
             }
@@ -204,30 +201,32 @@ public class TrackHand : MonoBehaviour {
 
     //영상처리파트
     void ThreadRun() {
-      
 
-       
 
+        Mat tabmat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        tabmat = cam_mat;
+
+        Cv2.Circle(tabmat, new Point(160, 90),20,-1,100,LineTypes.AntiAlias);
 
         //YCrCb 로 변환
         YCrCb = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        Cv2.CvtColor(cam_mat,YCrCb,ColorConversionCodes.RGB2YCrCb);
+        Cv2.CvtColor(tabmat,YCrCb,ColorConversionCodes.RGB2YCrCb);
 
         //피부색 추출 -> gray color로 출력 
-        Cv2.InRange(YCrCb, new Scalar(10, 77,133), new Scalar(240, 127, 153),skinMat);
+        Cv2.InRange(YCrCb, new Scalar(100, 77,133), new Scalar(240, 127, 153),skinMat);
 
         //이진화(gray color -> 흰색과 검은색으로 이진화)
         binMat =  new Mat(imHeight, imWidth, MatType.CV_8UC3);
         Cv2.Threshold(skinMat, binMat, 0, 255, ThresholdTypes.Binary);
 
         //팽창 
-        dilMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        Cv2.Dilate(binMat, dilMat, new Mat());
+        closeMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        Cv2.MorphologyEx(binMat, closeMat,MorphTypes.Close, new Mat());
 
         //메디안 필터링(입력,출력,중간기준을 설정하는 필터값) : 중간값 필터링, 마스크에 있어서 중간값을 취함. 
         //가우시안 필터에 비해 윤곽선을 강조하기에 유리하며 임펄스성분 제거에 유리 
         filterMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        Cv2.MedianBlur(dilMat, filterMat, 11);
+        Cv2.MedianBlur(closeMat, filterMat, 11);
 
         xyMat = new Mat(imHeight,imWidth,MatType.CV_64F);
         labelMat = new Mat();
@@ -236,24 +235,26 @@ public class TrackHand : MonoBehaviour {
 
 
 
-        //라벨링
-        int nLab = Cv2.ConnectedComponentsWithStats(dilMat,labelMat,statMat,xyMat);
+        //라벨링(살색 후보군 지정)
+        int nLab = Cv2.ConnectedComponentsWithStats(filterMat,labelMat,statMat,xyMat);
 
-        //라벨들의 인덱스
         var statsIndexer = statMat.GetGenericIndexer<int>();
+
+       
+        
 
         Itemlabel[] itemArr = new Itemlabel[nLab];
         itemArrMain = new Itemlabel[nLab];
         int[] sizearr = new int[nLab];
        
-        //라벨정보 저장.
+        //살색후보군 저장. - 라벨
         for (int i=0;i<nLab;i++) {
 
             OpenCvSharp.Rect tabRect = new OpenCvSharp.Rect()
             {
                 X = statsIndexer[i, 0],
                 Y = statsIndexer[i, 1],
-                Width = statsIndexer[i, 2],
+                Width = labelSizeChecker(statsIndexer[i, 2]),
                 Height = statsIndexer[i, 3]
             };
 
@@ -268,7 +269,7 @@ public class TrackHand : MonoBehaviour {
 
         }
 
-        //사이즈가 큰 순서로 적용 
+        //살색 사이즈가 큰 순서로 적용 
         System.Array.Sort(sizearr);
         System.Array.Reverse(sizearr);
         
@@ -289,14 +290,14 @@ public class TrackHand : MonoBehaviour {
 
         }
 
-        //머리
-        statRect = itemArrMain[0].rect;
+        //가장 큰 살색
+        statRect = itemArrMain[1].rect;
        
-        //손1
-        statRect2 = itemArrMain[1].rect;
+        //그 다음으로 큰 살색
+        statRect2 = itemArrMain[2].rect;
 
-        //손1
-        statRect3 = itemArrMain[2].rect;
+        //그 다음으로 큰 살색 
+        statRect3 = itemArrMain[3].rect;
 
 
 
@@ -316,6 +317,43 @@ public class TrackHand : MonoBehaviour {
         return hand_position;
     }
 
+    public static int labelSizeChecker(int data) {
+
+        int result;
+
+        if (data > 50)
+        {
+            result = 50;
+
+        }
+        else {
+
+            result = data;
+        }
+
+        return result;
+
+    }
+
+    public static int labelSizeChecker2(int data)
+    {
+
+        int result;
+
+        if (data > 150)
+        {
+            result = 50;
+
+        }
+        else
+        {
+
+            result = data;
+        }
+
+        return result;
+
+    }
 
     class Itemlabel{
         public OpenCvSharp.Rect rect;
