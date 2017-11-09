@@ -33,13 +33,20 @@ public class TrackHand : MonoBehaviour {
     private Vec3b[] videoSourceImageData;
 
     private Mat skinMat;
+
     private Mat openMat;
+
     private Mat binMat;
     private Mat filterMat;
     private Mat closeMat;
     private Mat xyMat;
     private Mat labelMat;
     private Mat statMat;
+    private Mat medianMat;
+    private Mat hsvMat;
+    private Mat redMat;
+
+    private Mat lineMat;
 
 
     // Frame rate parameter
@@ -49,17 +56,23 @@ public class TrackHand : MonoBehaviour {
     private Vec3b pix;
 
     public static Mat YCrCb;
-   
-
-
     public GameObject HandPointer_01;
     public GameObject HandPointer_02;
 
-    private OpenCvSharp.Rect statRect;
+    public OpenCvSharp.Rect statRect;
     private OpenCvSharp.Rect statRect2;
     private OpenCvSharp.Rect statRect3;
 
+    Mat background;
+    CascadeClassifier faceCascade;
     Itemlabel[] itemArrMain;
+    private Itemlabel[] itemArrMain2;
+    private int fy;
+    private int fx;
+    private Mat statMat2;
+    private Mat labelMat2;
+    private Mat xyMat2;
+
     // Use this for initialization
     void Start () {
    
@@ -72,7 +85,6 @@ public class TrackHand : MonoBehaviour {
             cam_image.texture = webcamTexture;       
             webcamTexture.Play();
 
-
             //Mat 및 이미지데이터 형식정의
             videoSource_Mat_Image = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             videoSourceImageData = new Vec3b[imHeight * imWidth];
@@ -84,14 +96,19 @@ public class TrackHand : MonoBehaviour {
             binMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             labelMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             statMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-
-
+            background = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+            lineMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+            hsvMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+            redMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+            medianMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
             //유니티 엔진에 적용하기 위해 사용하는 Texture2D 프레임워크 초기화
             processedTexture = new Texture2D(imWidth, imHeight, TextureFormat.RGBA32, true, true);
             result_texture = new Texture2D(imWidth, imHeight, TextureFormat.RGBA32, true, true);
-
+            statRect = new OpenCvSharp.Rect(0,0, 0, 0);
             //손 위치 초기화
             hand_position = new Vector2();
+
+            faceCascade = new CascadeClassifier("C:/GitHubProject/AR_ImageProcessing_Project/Assets/Resources/haarcascade_frontface.xml");
         }
         else
         {
@@ -102,39 +119,56 @@ public class TrackHand : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        //프레임 카운트
-        updateFrameCount++;
-
+      
         if (webcamTexture.isPlaying)
         {
 
             if (webcamTexture.didUpdateThisFrame)
             {
 
-                //텍스처 카운트
-                textureCount++;
+
 
                 //유니티 카메라에서 얻은 Texture 형식을 Mat형식으로 변환
                 cam_mat = TextureToMat();
+                if (textureCount ==20)
+                {
+
+                    background = cam_mat;
+                    Debug.Log("background : "+background.Size().Height);
+                }
+
+
 
                 if (cam_mat == null)
                 {
                     Debug.Log("생성실패");
                 }
                 else {
-                  
-
-                    //영상처리 스레드 생성 (일회성)
-                    Thread trackThread = new Thread(new ThreadStart(ThreadRun));
-                    trackThread.Start();
-                    
                     //뿌려주기(비동기 가상 스레드) 
-                    StartCoroutine(mat_To_Texture(filterMat));
+                    if (textureCount >= 20)
+                    {
 
-                    //좌표를 화면에 보여줌. 
-                    HandPointer_01.GetComponent<RectTransform>().position = new Vector3(320-(statRect.X+(statRect.Width/2)), (statRect.Y + (statRect.Height*4)/5), -5);
-                    
+                        //영상처리 스레드 생성 (일회성)
+                        Thread trackThread = new Thread(new ThreadStart(ThreadRun));
+                        trackThread.Start();
+
+                   
+                        StartCoroutine(mat_To_Texture(filterMat));
+                        //좌표를 화면에 보여줌. 
+                        HandPointer_01.GetComponent<RectTransform>().position = new Vector3(320 - statRect.X,statRect.Y, -5);
+                        Debug.Log(" point " + fx + " , " + fy);
+
+
+                    }
+
                 }
+
+
+                //텍스처 카운트
+                textureCount++;
+
+
+
             }
         }
         else
@@ -148,6 +182,8 @@ public class TrackHand : MonoBehaviour {
         {
             Debug.Log("Frame count: " + updateFrameCount + ", Texture count: " + textureCount + ", Display count: " + displayCount);
         }
+        //프레임 카운트
+        updateFrameCount++;
 
 
     }
@@ -199,162 +235,231 @@ public class TrackHand : MonoBehaviour {
 
     }
 
+
+
+
+
     //영상처리파트
     void ThreadRun() {
 
 
-        Mat tabmat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        tabmat = cam_mat;
-
-        Cv2.Circle(tabmat, new Point(160, 90),20,-1,100,LineTypes.AntiAlias);
-
-        //YCrCb 로 변환
-        YCrCb = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        Cv2.CvtColor(tabmat,YCrCb,ColorConversionCodes.RGB2YCrCb);
-
-        //피부색 추출 -> gray color로 출력 
-        Cv2.InRange(YCrCb, new Scalar(100, 77,133), new Scalar(240, 127, 153),skinMat);
-
-        //이진화(gray color -> 흰색과 검은색으로 이진화)
-        binMat =  new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        Cv2.Threshold(skinMat, binMat, 0, 255, ThresholdTypes.Binary);
-
-        //팽창 
-        closeMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        Cv2.MorphologyEx(binMat, closeMat,MorphTypes.Close, new Mat());
-
-        //메디안 필터링(입력,출력,중간기준을 설정하는 필터값) : 중간값 필터링, 마스크에 있어서 중간값을 취함. 
-        //가우시안 필터에 비해 윤곽선을 강조하기에 유리하며 임펄스성분 제거에 유리 
-        filterMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        Cv2.MedianBlur(closeMat, filterMat, 11);
-
-        xyMat = new Mat(imHeight,imWidth,MatType.CV_64F);
-        labelMat = new Mat();
-        statMat = new Mat();
+        // Cv2.Subtract(cam_mat, background, subMat);
+        //lineMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        //Cv2.Canny(cam_mat,lineMat)
 
 
+        /*
+        //얼굴인식
+        OpenCvSharp.Rect[] faces = faceCascade.DetectMultiScale(cam_mat, 1.08, 2, HaarDetectionType.FindBiggestObject, new Size(100, 100));
 
-
-        //라벨링(살색 후보군 지정)
-        int nLab = Cv2.ConnectedComponentsWithStats(filterMat,labelMat,statMat,xyMat);
-
-        var statsIndexer = statMat.GetGenericIndexer<int>();
-
-       
-        
-
-        Itemlabel[] itemArr = new Itemlabel[nLab];
-        itemArrMain = new Itemlabel[nLab];
-        int[] sizearr = new int[nLab];
-       
-        //살색후보군 저장. - 라벨
-        for (int i=0;i<nLab;i++) {
-
-            OpenCvSharp.Rect tabRect = new OpenCvSharp.Rect()
+        //검출한 얼굴의 위치에 원으로 묘화
+        foreach (OpenCvSharp.Rect face in faces)
+        {
+            var center = new Point
             {
-                X = statsIndexer[i, 0],
-                Y = statsIndexer[i, 1],
-                Width = labelSizeChecker(statsIndexer[i, 2]),
-                Height = statsIndexer[i, 3]
+                X = (int)(face.X + face.Width * 0.5),
+                Y = (int)(face.Y + face.Height * 0.5)
             };
+            var axes = new Size
+            {
+                Width = (int)(face.Width * 0.5),
+                Height = (int)(face.Height * 0.5)
+            };
+            Debug.Log(" point " + center.X + " , " + center.Y);
 
-            Itemlabel item = new Itemlabel();
-            item.rect = tabRect;
-            item.labelnum = i;
-            item.labelsize = tabRect.Width * tabRect.Height;
-
-            itemArr[i] = new Itemlabel();
-            itemArr[i] = item; 
-            sizearr[i] = tabRect.Width * tabRect.Height;
-
+            //얼굴영역제외
+            Cv2.Circle(cam_mat, new Point(center.X, center.Y), 10, -1, 100, LineTypes.AntiAlias);
         }
 
-        //살색 사이즈가 큰 순서로 적용 
-        System.Array.Sort(sizearr);
-        System.Array.Reverse(sizearr);
-        
-        //라벨 리스트 정렬
-        for (int i = 0; i < nLab; i++) {
+        */
 
-            for (int j = 0; j < nLab; j++) {
+        Cv2.CvtColor(cam_mat, hsvMat, ColorConversionCodes.RGB2HSV_FULL);
+        Cv2.InRange(hsvMat, new Scalar(175, 50, 0), new Scalar(180, 255, 255), redMat);
+        Cv2.MedianBlur(redMat, medianMat, 7);
+        xyMat2 = new Mat(imHeight, imWidth, MatType.CV_64F);
+        labelMat2 = new Mat();
+        statMat2 = new Mat();
 
+        //관심영역 처리-레이블링
+        int nLab2 = Cv2.ConnectedComponentsWithStats(medianMat, labelMat2, statMat2, xyMat2);
 
-                if (sizearr[i] == itemArr[j].labelsize ) {
-                    itemArrMain[i] = new Itemlabel();
-                    itemArrMain[i] = itemArr[j];
+        //라벨 인덱스 생성
+        var statsIndexer2 = statMat2.GetGenericIndexer<int>();
 
-                }
+        Itemlabel[] itemArr2 = new Itemlabel[nLab2];
+        int[] sizearr2 = new int[nLab2];
+
+        int index = 1;
+        int maxsize = 0;
+        //살색후보군 저장. - 라벨
+        for (int i = 0; i < nLab2; i++)
+        {
+
+            OpenCvSharp.Rect tabRect2 = new OpenCvSharp.Rect()
+            {
+                X = statsIndexer2[i, 0],
+                Y = statsIndexer2[i, 1],
+                Width = statsIndexer2[i, 2],
+                Height = statsIndexer2[i, 3]
+            };
+
+            Itemlabel item2 = new Itemlabel();
+            item2.rect = tabRect2;
+            item2.labelnum = i;
+            item2.labelsize = tabRect2.Width * tabRect2.Height;
+
+            itemArr2[i] = item2;
+            sizearr2[i] = tabRect2.Width * tabRect2.Height;
+
+            if (sizearr2[i] > maxsize && sizearr2[i] < 57000) {
+                maxsize = sizearr2[i];
+                index = i;
 
             }
 
 
         }
 
-        //가장 큰 살색
-        statRect = itemArrMain[1].rect;
+
+        if (nLab2 >=2) {
+            fx = itemArr2[index].rect.X + itemArr2[index].rect.Width / 2;
+            //fx = itemArr2[0].labelsize;
+            fy = itemArr2[index].rect.Y + itemArr2[index].rect.Height / 2;
+        }
+
+
+        ////////////////////////////////////////////////////////////////
+
+        //YCrCb 로 변환
+        YCrCb = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        Cv2.CvtColor(cam_mat,YCrCb,ColorConversionCodes.RGB2YCrCb);
+
+        //피부색 추출 -> gray color로 출력 
+        Cv2.InRange(YCrCb, new Scalar(0, 73,133), new Scalar(255, 148, 173),skinMat);
+
+        //이진화(gray color -> 흰색과 검은색으로 이진화)
+        binMat =  new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        Cv2.Threshold(skinMat, binMat, 0, 255, ThresholdTypes.Binary);
+
+        //침식
+        lineMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        Cv2.MorphologyEx(binMat, lineMat, MorphTypes.DILATE, new Mat());
+
+
+        //모폴로지 연산 - 침식
+        openMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        Cv2.MorphologyEx(lineMat, openMat, MorphTypes.Open, new Mat());
+
+        //가우시안 필터에 비해 윤곽선을 강조하기에 유리하며 임펄스성분 제거에 유리 
+        filterMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        //Cv2.GaussianBlur(openMat, filterMat,new Size(5,5),7);
+        Cv2.MedianBlur(openMat, filterMat, 11);
+
+
+        //얼굴영역제외  
+        Mat tabmat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
+        tabmat = filterMat;
+        Cv2.Circle(tabmat, new Point(fx, fy), 10, -1, 100, LineTypes.AntiAlias);
+        
+       xyMat = new Mat(imHeight,imWidth,MatType.CV_64F);
+       labelMat = new Mat();
+       statMat = new Mat();
+
+       //관심영역 처리-레이블링
+       int nLab = Cv2.ConnectedComponentsWithStats(tabmat,labelMat,statMat,xyMat);
+
+       //라벨 인덱스 생성
+       var statsIndexer = statMat.GetGenericIndexer<int>();
+
+       Itemlabel[] itemArr = new Itemlabel[nLab];
+       itemArrMain = new Itemlabel[nLab];
+       int[] sizearr = new int[nLab];
+
+       //살색후보군 저장. - 라벨
+       for (int i=0;i<nLab;i++) {
+
+           OpenCvSharp.Rect tabRect = new OpenCvSharp.Rect()
+           {
+               X = statsIndexer[i, 0],
+               Y = statsIndexer[i, 1],
+               Width = statsIndexer[i, 2],
+               Height = statsIndexer[i, 3]
+           };
+
+           Itemlabel item = new Itemlabel();
+           item.rect = tabRect;
+           item.labelnum = i;
+           item.labelsize = tabRect.Width * tabRect.Height;
+
+           itemArr[i] = new Itemlabel();
+           itemArr[i] = item; 
+           sizearr[i] = tabRect.Width * tabRect.Height;
+
+       }
+
+       //살색 사이즈가 큰 순서로 적용 
+       System.Array.Sort(sizearr);
+       System.Array.Reverse(sizearr);
+
+       //라벨 리스트 정렬
+       for (int i = 0; i < nLab; i++) {
+
+           for (int j = 0; j < nLab; j++) {
+
+
+               if (sizearr[i] == itemArr[j].labelsize ) {
+                   itemArrMain[i] = new Itemlabel();
+                   itemArrMain[i] = itemArr[j];
+
+               }
+
+           }
+
+
+       }
+
+       //가장 큰 살색
+       //statRect = itemArrMain[0].rect;
+
        
-        //그 다음으로 큰 살색
-        statRect2 = itemArrMain[2].rect;
+        //코너검출 
+        Point2f[] cornerPointArr = Cv2.GoodFeaturesToTrack(tabmat, 1, 0.5, 20, tabmat, 15, false, 0.04);
 
-        //그 다음으로 큰 살색 
-        statRect3 = itemArrMain[3].rect;
+        float sum_x = 0;
+        float sum_y = 0;
+        float cnt = 0;
+        //코너들의 평균 좌표값 계산
+        for (int i = 0; i < cornerPointArr.Length; i++)
+        {
+            //Cv2.Circle(cam_mat, cornerPointArr[i], 3, Scalar.Black,1, LineTypes.AntiAlias);
+            //라벨 안에 검출된 코너가 있을 경우 
+            if (cornerPointArr[i].X>= itemArrMain[1].rect.X&& cornerPointArr[i].X <= itemArrMain[1].rect.X+ itemArrMain[1].rect.Width ) {
+                if (cornerPointArr[i].Y >= itemArrMain[1].rect.Y&& cornerPointArr[i].Y <= itemArrMain[1].rect.Y + itemArrMain[1].rect.Height)
+                {
+                    //그 코너 위치를 표시
+                    Cv2.Circle(tabmat, cornerPointArr[i], 4, Scalar.Red, 2, LineTypes.AntiAlias);
+                    sum_x += cornerPointArr[i].X;
+                    sum_y += cornerPointArr[i].Y;
+                    cnt += 1.0f;
+                }
+            }
 
-
-
-
-
-        //모폴로지 연산 - 침식후 팽창
-        //openMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
-        //Cv2.MorphologyEx(filterMat, openMat, MorphTypes.Open, new Mat());
-
-
+        }
+        int avgx = (int)(sum_x / cnt);
+        int avgy = (int)(sum_y / cnt);
+        //좌표반환        
+        statRect = new OpenCvSharp.Rect(avgx, avgy,0,0);
     }
 
-
+    /*
     //외부에서 카메라상의 손의 위치를 쉽게 불러다가 사용할 수 있도록 함. 
+    //320*180 해상도 전용
     public static Vector2 get_Hand_Position()
     {
-        return hand_position;
+        return new Vector2(320-statRect.X,statRect.Y);
     }
 
-    public static int labelSizeChecker(int data) {
-
-        int result;
-
-        if (data > 50)
-        {
-            result = 50;
-
-        }
-        else {
-
-            result = data;
-        }
-
-        return result;
-
-    }
-
-    public static int labelSizeChecker2(int data)
-    {
-
-        int result;
-
-        if (data > 150)
-        {
-            result = 50;
-
-        }
-        else
-        {
-
-            result = data;
-        }
-
-        return result;
-
-    }
-
+    */
     class Itemlabel{
         public OpenCvSharp.Rect rect;
         public int labelsize;
