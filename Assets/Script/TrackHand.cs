@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using System.Runtime.InteropServices;
 using OpenCvSharp;
 using System.Threading;
-
+using System.Diagnostics;
 public class TrackHand : MonoBehaviour {
 
     
@@ -73,6 +73,8 @@ public class TrackHand : MonoBehaviour {
     private Mat labelMat2;
     private Mat xyMat2;
 
+    long delay;
+
     // Use this for initialization
     void Start () {
    
@@ -112,7 +114,7 @@ public class TrackHand : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Can't find camera!");
+            UnityEngine.Debug.Log("Can't find camera!");
         }
      
     }
@@ -134,14 +136,14 @@ public class TrackHand : MonoBehaviour {
                 {
 
                     background = cam_mat;
-                    Debug.Log("background : "+background.Size().Height);
+                    UnityEngine.Debug.Log("background : "+background.Size().Height);
                 }
 
 
 
                 if (cam_mat == null)
                 {
-                    Debug.Log("생성실패");
+                    UnityEngine.Debug.Log("생성실패");
                 }
                 else {
                     //뿌려주기(비동기 가상 스레드) 
@@ -156,7 +158,8 @@ public class TrackHand : MonoBehaviour {
                         StartCoroutine(mat_To_Texture(filterMat));
                         //좌표를 화면에 보여줌. 
                         HandPointer_01.GetComponent<RectTransform>().position = new Vector3(320 - statRect.X,statRect.Y, -5);
-                        Debug.Log(" point " + fx + " , " + fy);
+                        UnityEngine.Debug.Log(" point " + fx + " , " + fy);
+                        UnityEngine.Debug.Log("delay = "+delay.ToString()+" ms");
 
 
                     }
@@ -173,14 +176,14 @@ public class TrackHand : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Can't find camera!");
+            UnityEngine.Debug.Log("Can't find camera!");
         }
 
 
         // output frame rate information
         if (updateFrameCount % 30 == 0)
         {
-            Debug.Log("Frame count: " + updateFrameCount + ", Texture count: " + textureCount + ", Display count: " + displayCount);
+            UnityEngine.Debug.Log("Frame count: " + updateFrameCount + ", Texture count: " + textureCount + ", Display count: " + displayCount);
         }
         //프레임 카운트
         updateFrameCount++;
@@ -241,8 +244,8 @@ public class TrackHand : MonoBehaviour {
 
     //영상처리파트
     void ThreadRun() {
-
-
+        Stopwatch sp = new Stopwatch();
+        sp.Start();
         // Cv2.Subtract(cam_mat, background, subMat);
         //lineMat = new Mat(imHeight, imWidth, MatType.CV_8UC3);
         //Cv2.Canny(cam_mat,lineMat)
@@ -449,6 +452,12 @@ public class TrackHand : MonoBehaviour {
         int avgy = (int)(sum_y / cnt);
         //좌표반환        
         statRect = new OpenCvSharp.Rect(avgx, avgy,0,0);
+
+
+        sp.Stop();
+
+        delay = sp.ElapsedMilliseconds;
+
     }
 
     /*
